@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gishokalolo.testexpr.ui.view.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/navigate_to_fragmentWeatherList"
+            app:destination="@id/fragmentWeatherList" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.gishokalolo.testexpr.ui.view.FavoriteFragment"
+        android:label="Favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentWeatherList"
+        android:name="com.gishokalolo.testexpr.ui.view.SearchWeatherFragment"
+        android:label="FragmentWeatherList" >
+        <action
+            android:id="@+id/action_fragmentWeatherList_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            />
+    </fragment>
+</navigation>
